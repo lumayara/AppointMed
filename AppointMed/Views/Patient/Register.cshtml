@@ -1,6 +1,6 @@
 ﻿@model AppointMed.Models.Patient
 
-@using (Html.BeginForm("Register", "Patient", new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "RegisterForm", role = "form" }))
+@using (Html.BeginForm("Register", "Patient", FormMethod.Post, new { id = "RegisterForm", role = "form" }))
     {
     @Html.AntiForgeryToken()
 

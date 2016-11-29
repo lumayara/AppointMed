@@ -27,9 +27,9 @@ namespace AppointMed.Controllers
 
             if (ModelState.IsValid)
             {
-                using(DataModel db = new DataModel())
+                using(Entities db = new Entities())
                 {
-                    db.Patient.Add(p);
+                    db.Patients.Add(p);
                     db.SaveChanges();
 
                     success = true;
@@ -46,15 +46,15 @@ namespace AppointMed.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(Patient patient, string returnUrl)
+        public ActionResult Login(Patient patient)
         {
             bool success = false;
             string message = "Username or password is incorrect";
-            using (DataModel db = new DataModel())
+            using (Entities db = new Entities())
             {
                 try
                 {
-                    var pat = db.Patient.Single(p => p.Username == patient.Username && p.Password == patient.Password);
+                    var pat = db.Patients.Single(p => p.Username == patient.Username && p.Password == patient.Password);
                     if (pat!= null)
                     {
                         Session["PatientId"] = pat.Id.ToString();

@@ -11,21 +11,21 @@ namespace AppointMed.Controllers
     public class DoctorController : Controller
     {
         // GET: Doctor
-        public ActionResult Index()
+        public ActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Index(TDoctor doctor)
+        public ActionResult Login(TDoctor doctor)
         {
             bool success = false;
             string message = "Username or password is incorrect";
-            using (DataModel db = new DataModel())
+            using (Entities db = new Entities())
             {
                 try
                 {
-                    var doc = db.TDoctor.Single(u => u.Username == doctor.Username && u.Password == doctor.Password);
+                    var doc = db.TDoctors.Single(u => u.Username == doctor.Username && u.Password == doctor.Password);
                     if (doc != null)
                     {
                         Session["DoctorId"] = doc.Id.ToString();
@@ -41,6 +41,11 @@ namespace AppointMed.Controllers
                     ModelState.AddModelError("", message);
                 }
             }
+            return View();
+        }
+
+        public ActionResult Index()
+        {
             return View();
         }
 

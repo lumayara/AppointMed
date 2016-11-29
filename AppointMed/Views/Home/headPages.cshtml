@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "AppointMed";
+}
+ <!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-inverse navbar-fixed-top">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" href="~/Doctor/LoggedIn">@ViewBag.Title</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+        <ul class="nav navbar-nav navbar-inverse navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp;<span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="profile.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Edit Profile</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="LogOut">
+                    <span class="glyphicon glyphicon-log-out"></span> Log Out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+    <!-- /.container-fluid -->
+</nav>

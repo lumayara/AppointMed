@@ -160,11 +160,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\AppointMed.Models.ModelData.mdf" />
+    <Content Include="App_Data\AppointMed.Models.ModelData_log.ldf">
+      <DependentUpon>AppointMed.Models.ModelData.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\agency.css" />
     <Content Include="Content\agency.min.css" />
+    <Content Include="Content\calendar-style.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Pages.css" />
+    <Content Include="Content\pignose.calendar.min.css" />
+    <Content Include="Content\prism.css" />
+    <Content Include="Content\semantic.ui.min.css" />
+    <Content Include="Content\style.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="img\about\hospital.jpg" />
     <Content Include="img\header-bg.jpg" />
@@ -172,6 +181,16 @@
     <Content Include="img\team\doc1.jpg" />
     <Content Include="img\team\doc2.jpg" />
     <Content Include="img\team\doc3.jpg" />
+    <Content Include="Models\ModelData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelData.edmx</DependentUpon>
+      <LastGenOutput>ModelData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelData.edmx</DependentUpon>
+      <LastGenOutput>ModelData.cs</LastGenOutput>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -185,8 +204,13 @@
     <Content Include="scripts\agency.min.js" />
     <Content Include="scripts\contact_me.js" />
     <Content Include="scripts\jqBootstrapValidation.js" />
+    <Content Include="scripts\jquery-ui.multidatespicker.js" />
+    <Content Include="scripts\jquery.easing.js" />
     <Content Include="scripts\jquery.js" />
     <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\pignose.calendar.min.js" />
+    <Content Include="scripts\prism.min.js" />
+    <Content Include="scripts\semantic.ui.min.js" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -197,8 +221,20 @@
     <Content Include="Views\Patient\Register.cshtml" />
     <Content Include="Views\Patient\Login.cshtml" />
     <Content Include="Views\Patient\LoggedIn.cshtml" />
-    <Content Include="Views\Doctor\Index.cshtml" />
+    <Content Include="Views\Doctor\Login.cshtml" />
     <Content Include="Views\Doctor\LoggedIn.cshtml" />
+    <Content Include="Views\Schedulle\Schedule.cshtml" />
+    <EntityDeploy Include="Models\ModelData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelData.edmx.diagram">
+      <DependentUpon>ModelData.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Doctor\Index.cshtml" />
+    <Content Include="Views\Home\headPages.cshtml" />
+    <Content Include="Views\Home\footPages.cshtml" />
+    <Content Include="Views\Schedulle\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -225,18 +261,42 @@
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
+    <Compile Include="Controllers\SchedulleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Appointment.cs" />
-    <Compile Include="Models\DataModel.cs" />
-    <Compile Include="Models\Patient.cs" />
-    <Compile Include="Models\Schedule.cs" />
-    <Compile Include="Models\TDoctor.cs" />
+    <Compile Include="Models\Appointment.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Patient.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Schedule.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TDoctor.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,17 +1,92 @@
 ﻿
-@{
-    Layout = null;
+@if (Session["DoctorId"] != null)
+{
+    <!DOCTYPE html>
+    <html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>AppointMed</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+        <!-- Theme CSS -->
+        <link href="~/Content/Pages.css" rel="stylesheet">
+
+
+    </head>
+
+    <body>
+
+       @Html.Partial("../Home/headPages")
+
+        <section id="services" class="bg-light-gray">
+            <div class="container">
+                <h4> Hello @Session["FirstName"].ToString(),</h4>
+                <p>
+                   Please, select below what you would like to do.
+                </p>
+                <br />
+                <br />
+                <br />
+                <br />
+
+
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <a href="~/Schedulle/Schedule" class="optionsDoctor">
+                            <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x text-success"></i>
+                                <i class="fa fa-calendar-o fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <h4 class="service-heading">Add Schedule</h4>
+                            <p class="text-muted">Set up your schedule.</p>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a href="~/Schedulle/List" class="optionsDoctor">
+                            <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x text-success"></i>
+                                <i class="fa fa-times fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <h4 class="service-heading">Cancel Schedule</h4>
+                            <p class="text-muted">Cancel a schedule.</p>
+                            </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fa fa-circle fa-stack-2x text-success"></i>
+                            <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="service-heading">See History</h4>
+                        <p class="text-muted">See all your schedule.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        @Html.Partial("../Home/footPages")
+    </body>
+
+</html>
+
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>LoggedIn</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>
