@@ -100,8 +100,8 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
@@ -208,6 +208,7 @@
     <Content Include="scripts\jquery.easing.js" />
     <Content Include="scripts\jquery.js" />
     <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\main.js" />
     <Content Include="scripts\pignose.calendar.min.js" />
     <Content Include="scripts\prism.min.js" />
     <Content Include="scripts\semantic.ui.min.js" />
@@ -235,6 +236,10 @@
     <Content Include="Views\Home\headPages.cshtml" />
     <Content Include="Views\Home\footPages.cshtml" />
     <Content Include="Views\Schedulle\List.cshtml" />
+    <Content Include="Views\Appointment\MakeAppointment.cshtml" />
+    <Content Include="Views\Doctor\SearchDoctor.cshtml" />
+    <Content Include="Views\Doctor\WhoIsAvailable.cshtml" />
+    <Content Include="Views\Appointment\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -258,6 +263,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
@@ -265,9 +271,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Appointment.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Availability.cs" />
     <Compile Include="Models\ModelData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

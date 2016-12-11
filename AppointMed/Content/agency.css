@@ -753,8 +753,22 @@ body {
 #loginBox{
   padding: 30px;
   max-width:500px;
-  margin: 150px auto;
+  margin: 80px auto 170px auto;
   border-radius: 2px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  background: rgba(0, 0, 0, 0.5);
+ /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);*/
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.loginPage {
+
+  text-align: center;
+  color: white;
+  padding-top: 100px;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 22px;
+}
+
+.doctorPage{
+    background-color: black;
 }

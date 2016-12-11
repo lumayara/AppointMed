@@ -22,17 +22,21 @@ namespace AppointMed.Controllers
         [HttpPost]
         public ActionResult Register(Patient p)
         {
-            bool success = false;
-            string message = "There is an invalid field";
-
             if (ModelState.IsValid)
             {
                 using(Entities db = new Entities())
                 {
-                    db.Patients.Add(p);
-                    db.SaveChanges();
+                    bool contactExists = db.Patients.Any(patient => patient.Username.Equals(p.Username));
+                    if (contactExists)
+                    {
+                        return Json(new { result = "This username already exists" });
+                    }
+                    else
+                    {
+                        db.Patients.Add(p);
+                        db.SaveChanges();
 
-                    success = true;
+                    }
                 }
                 ModelState.Clear();
                 return Json(new { result = "Redirect", url = Url.Action("Index", "Home") });

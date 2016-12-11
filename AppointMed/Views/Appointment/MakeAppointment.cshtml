@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+@Html.Partial("../Home/headPages")
+<header>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-5 col-md-offset-1">
+                <a href="/Doctor/SearchDoctor" class="optionsDoctor">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-stethoscope fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Search Availablity By Doctor</h4>
+                </a>
+            </div>
+
+            <div class="col-md-5">
+                <a href="/Doctor/WhoIsAvailable" class="optionsDoctor">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-calendar-o fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Search Availability By Date</h4>
+                </a>
+            </div>
+
+            @*<a href="/Doctor/SearchDoctor">Search by Doctor</a>
+                <a href="/Doctor/WhoIsAvailable">Search by Date</a>
+            *@
+        </div>
+    </div>
+</header>
+</body>
+</html>

@@ -53,5 +53,31 @@ namespace AppointMed.Controllers
         {
             return View();
         }
+
+        public ActionResult LogOut()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Doctor");
+        }
+
+        public ActionResult SearchDoctor()
+        {
+            List<TDoctor> doctors = new List<Models.TDoctor>();
+           
+            using (Entities db = new Entities())
+            {  
+                doctors = db.TDoctors.ToList();
+            }
+
+            return View(doctors);
+        }
+
+
+        public ActionResult WhoIsAvailable()
+        {
+
+            return View();
+        }
+
     }
 }

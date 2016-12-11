@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="patientID" Type="Int32" Nullable="false" />
     <Property Name="scheduleID" Type="Int32" Nullable="false" />
     <Property Name="prescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />

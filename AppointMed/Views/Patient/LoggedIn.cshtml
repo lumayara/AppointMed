@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "AppointMed";
 }
+
+
 @if (Session["PatientId"] != null)
 {
    <!DOCTYPE html>
@@ -99,34 +101,29 @@
                     
 
                     <div class="row text-center">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
+                            <a href="~/Appointment/MakeAppointment" class="optionsDoctor">
                             <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x text-warning"></i>
                                 <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
                             </span>
+                            </a>
                             <h4 class="service-heading">Schedule Appointment</h4>
                             <p class="text-muted">Schedule your own appointment.</p>
                         </div>
 
-                        <div class="col-md-3">
-                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x text-warning"></i>
-                                <i class="fa fa-times fa-stack-1x fa-inverse"></i>
-                            </span>
-                            <h4 class="service-heading">Cancel Appointment</h4>
-                            <p class="text-muted">Select and cancel any appointment.</p>
+                        <div class="col-md-4">
+                            <a href="~/Appointment/List" class="optionsDoctor">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fa fa-circle fa-stack-2x text-warning"></i>
+                                    <i class="fa fa-times fa-stack-1x fa-inverse"></i>
+                                </span>
+                                </a>
+                                <h4 class="service-heading">Cancel Appointment</h4>
+                                <p class="text-muted">Select and cancel any appointment.</p>
                         </div>
-
-                        <div class="col-md-3">
-                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x text-warning"></i>
-                                <i class="fa fa-refresh fa-stack-1x fa-inverse"></i>
-                            </span>
-                            <h4 class="service-heading">Change Appointment</h4>
-                            <p class="text-muted">Selelct and change your appointment.</p>
-                        </div>
-
-                        <div class="col-md-3">
+                                             
+                        <div class="col-md-4">
                             <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x text-warning"></i>
                                 <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
@@ -172,6 +169,13 @@
                 </div>
             </div>
         </footer>  
+
+        @if (TempData["AddedAppointment"] != null)
+        {
+            <script>alert('@TempData["AddedAppointment"]')</script>
+            TempData["AddedAppointment"] = null;
+        };
+
     </body>
 
 </html>

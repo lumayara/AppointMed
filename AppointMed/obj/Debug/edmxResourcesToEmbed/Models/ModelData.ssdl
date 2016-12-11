@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="patientID" Type="int" Nullable="false" />
     <Property Name="scheduleID" Type="int" Nullable="false" />
     <Property Name="prescription" Type="nvarchar" MaxLength="50" />

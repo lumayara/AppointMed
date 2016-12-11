@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AppointMed.Models.Appointment>
+@{
+    Layout = null;
+}
+
+@Html.Partial("../Home/headPages")
+<header>
+    @using (Html.BeginForm("Delete", "Appointment", FormMethod.Post))
+    {
+        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Date and Time</th>
+                    <th>Doctor</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Select</th>
+                    <th>Date and Time</th>
+                    <th>Doctor</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">
+                            <div class="radio">
+                                <input type="radio" id="@item.Id" value="@item.Id" name="appointment">
+                            </div>
+                        </th>
+                        <td>  <label for="@item.Id">@item.Schedule.startDate</label></td>
+                        <td>  <label for="@item.Id">@item.Schedule.TDoctor.firstName</label></td>
+                     </tr>
+
+                }
+            </tbody>
+            </table>
+    <input type="submit" class="btn btn-primary"/>
+
+    }
+    </header>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+</body>
+</html>
