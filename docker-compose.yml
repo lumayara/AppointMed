@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  appointmed:
+    image: ${DOCKER_REGISTRY-}appointmed
+    build:
+      context: .\AppointMed
+      dockerfile: Dockerfile
