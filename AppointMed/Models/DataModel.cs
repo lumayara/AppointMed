@@ -13,7 +13,7 @@ namespace AppointMed.Models
         // If you wish to target a different database and/or database provider, modify the 'DataModel' 
         // connection string in the application configuration file.
         public DataModel()
-            : base("name=DataModel")
+            : base("name=Entities")
         {
         }
 

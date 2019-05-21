@@ -30,8 +30,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="startDate" Type="DateTime" Nullable="false" />
-    <Property Name="endDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="startDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="endDate" Type="DateTime" Precision="7" />
     <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="TDoctor_Id" Type="Int32" />
     <NavigationProperty Name="Appointments" Relationship="Self.FK_dbo_Appointment_dbo_Schedule_scheduleID" FromRole="Schedule" ToRole="Appointment" />
@@ -108,5 +108,16 @@
       <End Role="TDoctor" EntitySet="TDoctors" />
       <End Role="Schedule" EntitySet="Schedules" />
     </AssociationSet>
+    <EntitySet Name="C__MigrationHistory" EntityType="AppointMed.Models.ModelDataModel.C__MigrationHistory" />
   </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>
