@@ -4,5 +4,5 @@ services:
   appointmed:
     image: ${DOCKER_REGISTRY-}appointmed
     build:
-      context: .\AppointMed
+      context: ./AppointMed
       dockerfile: Dockerfile
