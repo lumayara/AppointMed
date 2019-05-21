@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e87e7100f9014005aabd52905b1f8341" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="AppointMed.Models.ModelDataModel.Appointment" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppointMed.Models.ModelDataModel.Patient" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppointMed.Models.ModelDataModel.Schedule" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppointMed.Models.ModelDataModel.TDoctor" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="AppointMed.Models.ModelDataModel.FK_dbo_Appointment_dbo_Patient_patientID" ManuallyRouted="false" />
+        <AssociationConnector Association="AppointMed.Models.ModelDataModel.FK_dbo_Appointment_dbo_Schedule_scheduleID" ManuallyRouted="false" />
+        <AssociationConnector Association="AppointMed.Models.ModelDataModel.FK_dbo_Schedule_dbo_TDoctor_TDoctor_Id" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
