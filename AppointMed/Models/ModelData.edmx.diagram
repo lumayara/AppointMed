@@ -12,6 +12,7 @@
         <AssociationConnector Association="AppointMed.Models.ModelDataModel.FK_dbo_Appointment_dbo_Patient_patientID" ManuallyRouted="false" />
         <AssociationConnector Association="AppointMed.Models.ModelDataModel.FK_dbo_Appointment_dbo_Schedule_scheduleID" ManuallyRouted="false" />
         <AssociationConnector Association="AppointMed.Models.ModelDataModel.FK_dbo_Schedule_dbo_TDoctor_TDoctor_Id" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AppointMed.Models.ModelDataModel.C__MigrationHistory" Width="1.5" PointX="5.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

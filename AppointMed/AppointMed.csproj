@@ -162,10 +162,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\AppointMed.Models.ModelData.mdf" />
-    <Content Include="App_Data\AppointMed.Models.ModelData_log.ldf">
-      <DependentUpon>AppointMed.Models.ModelData.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\agency.css" />
     <Content Include="Content\agency.min.css" />
     <Content Include="Content\calendar-style.css" />
@@ -283,6 +279,9 @@
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Availability.cs" />
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ModelData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

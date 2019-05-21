@@ -29,5 +29,6 @@ namespace AppointMed.Models
         public virtual DbSet<Patient> Patients { get; set; }
         public virtual DbSet<Schedule> Schedules { get; set; }
         public virtual DbSet<TDoctor> TDoctors { get; set; }
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
     }
 }

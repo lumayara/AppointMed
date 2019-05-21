@@ -22,7 +22,7 @@ namespace AppointMed.Models
     
         public int Id { get; set; }
         public System.DateTime startDate { get; set; }
-        public System.DateTime endDate { get; set; }
+        public Nullable<System.DateTime> endDate { get; set; }
         public string text { get; set; }
         public Nullable<int> TDoctor_Id { get; set; }
     
